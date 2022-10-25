@@ -4,7 +4,7 @@ document.getElementById('body').appendChild(table);
 let row_1 = document.createElement('tr');
 
 let heading_1 = document.createElement('th');
-heading_1.innerHTML = "ID";
+heading_1.innerHTML = "";
 let heading_2 = document.createElement('th');
 heading_2.innerHTML = "Nome";
 let heading_3 = document.createElement('th');
@@ -91,13 +91,15 @@ requestOptions).then(reponse =>
         result.forEach((item)=>{
 			let row_2 = document.createElement('tr');	
 			let row_2_data_1 = document.createElement('td');
-			row_2_data_1.innerHTML = item["id"];
+			row_2_data_1.append = item["id"];
 			let row_2_data_2 = document.createElement('td');
 			row_2_data_2.innerHTML = item["nome"];
 			let row_2_data_3 = document.createElement('td');
 			row_2_data_3.innerHTML = item["cpf"];
 			let row_2_data_4 = document.createElement('td');
-			row_2_data_4.innerHTML = item["dataNascimento"];
+			let data = new Date(item["dataNascimento"]);
+			let dataFormatada = `${(data.getDate() + 1)}/${(data.getMonth() + 1)}/${data.getFullYear()}`;
+			row_2_data_4.innerHTML = dataFormatada;
 			let row_2_data_5 = document.createElement('td');
 			row_2_data_5.innerHTML = item["email"];
 			let row_2_data_6 = document.createElement('td');
