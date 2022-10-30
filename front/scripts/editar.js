@@ -6,18 +6,25 @@ function queryObj() {
     });
     return result;
 }
+function mascara(i){
+    var v = i.value;
+
+    if(isNaN(v[v.length-1])){
+        i.value = v.substring(0, v.length-1);
+        return;
+    }
+    i.setAttribute("maxlength", "14");
+    if(v.length == 3 || v.length == 7) i.value += ".";
+    if(v.length == 11) i.value += "-";
+}
 var myParam = queryObj();
 console.log(myParam);
-
 var my_headers = new Headers();
 my_headers.append("Content-type", "application/json");
-
-
 var requestOptions = {
 	method: 'GET',
 	headers: my_headers,
 	redirect : 'follow'
-	
 };
 
 fetch("http://localhost:8080/aluno/" + myParam['id'],
@@ -30,23 +37,17 @@ requestOptions).then(reponse =>
         document.querySelector("#inputCpf").value = result["cpf"];
         var formData = result["dataNascimento"].split('T')[0];
         document.querySelector("#inputDataNascimento").value = formData;
-
     }).catch(error => alert(error))
 
     const formulario = document.querySelector("#formCadastroCliente");
 		    
 formulario.addEventListener("submit", function(event){
-
     event.preventDefault();
-	
-	
     const nome = document.querySelector("#inputNome");
     const email = document.querySelector("#inputEmail");
     const telefone = document.querySelector("#inputTelefone");
     const cpf = document.querySelector("#inputCpf");
     const data_nascimento = document.querySelector("#inputDataNascimento");
-
-	
     const nome_cliente = nome.value;
     const email_clinete = email.value;
     const telefone_cliente = telefone.value;
@@ -54,7 +55,6 @@ formulario.addEventListener("submit", function(event){
     const data_cliente = data_nascimento.value;
     let dataStrig = new Date(data_cliente);
 	console.log(data_cliente);
-	
     fetch('http://localhost:8080/aluno',{
         method: 'PUT',
         headers: {

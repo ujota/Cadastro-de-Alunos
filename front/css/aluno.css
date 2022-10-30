@@ -1,60 +1,56 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-header{
-    background-color: orangered;
-    width: 100%;
-    height: 40px;
-    color: white;
-    text-align: left;
-}
-header ul{
-
-}
-header li{
-    list-style-type: none;
-    display: inline;
-    padding: 10px;
-    font-size: 20px;
+nav{
     text-transform: uppercase;
+    background-color: rgba(255, 0, 0, 0.644);
 }
-.container .box table input{
-    height: 30px;
-    margin-top: 70px;
-    text-align: left;
-    padding-left: 10px ;
-    border-top-right-radius: 10px;
-    border: 1px solid black;
-    transition: all;
+nav li a{
+    margin-right: 10px;
+    border-radius: 15px;
 }
-.container .box table input:placeholder-shown{
-    padding-left: 10px;
-    text-align: left;
+nav li a{
+    font-weight: bold;
 }
-.container .box table input:hover{
-    border: 2px solid black;
+
+.box{
+    background-color: rgb(223, 219, 219);
+    padding: 20px;
+    border-radius: 15px;
+    width: 1200px;
+    margin-top: 40px;
+    margin-left: -40px;
 }
 table th{
+    border-radius: 15px;
     text-transform: uppercase;
-    background-color: orangered;
-    padding: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;  
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.644);
+    width: 300px;
+    color: white;
+}
+table input{
+    text-transform: uppercase;
 }
 table td{
+    padding-right: 10px;
     text-align: center;
-    width: 200px;
 }
-table td button{
-    margin-right: 50px;
+.botao-editar{
+    text-align: center;
+    margin-left: 60px;
+    margin-right: -10px;
+    text-decoration: none;
 }
-table a button{
+
+#btnincluir{
+    background-color: rgba(0, 0, 255, 0.596);
+    transition: all;
+    color: white;
+    border-color: 1px rgba(0, 0, 255, 0.596);
+    text-transform: uppercase;
+}
+#btnincluir:hover{
     background-color: blue;
-    border: none;
-    padding: 8px;
     color: white;
     text-transform: uppercase;
-    border-radius: 15px;
-    margin-top: 90px;
 }
+
+
