@@ -35,7 +35,7 @@ var requestOptions = {
 	fetch("http://localhost:8080/aluno/" + idAluno,
 	requestOptions)
 		.then(result => {
-			alert('EXCLUIDO COM SUCESSO!')
+			alert('ALUNO EXCLUIDO COM SUCESSO!')
 			location.reload()
 		})
 		.catch(error => alert(error))

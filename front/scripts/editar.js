@@ -70,7 +70,7 @@ formulario.addEventListener("submit", function(event){
         })
     })
     .then(querySet =>{
-        alert('Sucesso!', querySet);
+        alert('DADOS ATUALIZADOS COM SUCESSO!', querySet);
         location.href = 'aluno.html';
     }).catch(() =>{
         alert('Falhou')

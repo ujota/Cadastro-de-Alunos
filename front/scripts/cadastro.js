@@ -34,7 +34,7 @@ formulario.addEventListener("submit", function(event){
         })
     })
     .then(querySet =>{
-        alert('Sucesso!', querySet);
+        alert('ALUNO CADASTRADO COM SUCESSO!', querySet);
         location.reload();
     }).catch(() =>{
         alert('Falhou')
