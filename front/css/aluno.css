@@ -18,6 +18,12 @@ nav li a{
     margin-top: 40px;
     margin-left: -40px;
 }
+.box h1{
+    text-transform: uppercase;
+    text-align: center;
+    text-align: center;
+    text-align: center;
+}
 table th{
     border-radius: 15px;
     text-transform: uppercase;
