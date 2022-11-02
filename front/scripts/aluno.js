@@ -22,6 +22,19 @@ row_1.appendChild(heading_5);
 row_1.appendChild(heading_6);
 table.appendChild(row_1);
 
+
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
+function formatDate(date) {
+  return [
+    padTo2Digits(date.getDate()),
+    padTo2Digits(date.getMonth() + 1),
+    date.getFullYear(),
+  ].join('/');
+}
+
 function excluirAluno(idAluno){
 	var my_headers = new Headers();
 	my_headers.append("Content-type", "application/json");
@@ -63,11 +76,16 @@ requestOptions).then(reponse =>
 
 			let row_2_data_3 = document.createElement('td');
 			let data = new Date(item["dataNascimento"]);
+			
 			let dia = ("0" + (data.getDate() + 1)).slice(-2);
 			let mes = ("0" + (data.getMonth() + 1)).slice(-2);
 			let ano = (data.getFullYear());
 			let dataFormatada = dia + "/" + mes + "/" + ano;
-			row_2_data_3.innerHTML = dataFormatada;
+			
+			data = new Date(data.getTime() + ((60*60*60*1000)/24))
+			console.log(data);
+			
+			row_2_data_3.innerHTML = formatDate(data);//.setHours(time.getHours() + 2);
 
 			let row_2_data_4 = document.createElement('td');
 			row_2_data_4.innerHTML = item["email"];

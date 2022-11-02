@@ -1,5 +1,6 @@
 package br.edu.unasp.aluno.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,9 +16,9 @@ public class Aluno {
 	private String email;
 	private String telefone;
 	private Long cpf;
-	private Date dataNascimento;
+	private LocalDate dataNascimento;
 	
-	public Aluno(Long id, String nome, String email, String telefone, Long cpf, Date dataNascimento) {
+	public Aluno(Long id, String nome, String email, String telefone, Long cpf, LocalDate dataNascimento) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -71,11 +72,11 @@ public class Aluno {
 		this.cpf = cpf;
 	}
 
-	public Date getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
