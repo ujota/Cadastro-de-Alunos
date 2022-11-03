@@ -75,17 +75,8 @@ requestOptions).then(reponse =>
 			row_2_data_2.innerHTML = item["cpf"];
 
 			let row_2_data_3 = document.createElement('td');
-			let data = new Date(item["dataNascimento"]);
-			
-			let dia = ("0" + (data.getDate() + 1)).slice(-2);
-			let mes = ("0" + (data.getMonth() + 1)).slice(-2);
-			let ano = (data.getFullYear());
-			let dataFormatada = dia + "/" + mes + "/" + ano;
-			
-			data = new Date(data.getTime() + ((60*60*60*1000)/24))
-			console.log(data);
-			
-			row_2_data_3.innerHTML = formatDate(data);//.setHours(time.getHours() + 2);
+			let data = item["dataNascimento"];
+			row_2_data_3.innerHTML = data.split("-").reverse().join("/");
 
 			let row_2_data_4 = document.createElement('td');
 			row_2_data_4.innerHTML = item["email"];
