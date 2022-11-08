@@ -16,14 +16,16 @@ public class Aluno {
 	private String email;
 	private String telefone;
 	private Long cpf;
+	private LocalDate dataNascimento;
 	
-	public Aluno(Long id, String nome, String email, String telefone, Long cpf) {
+	public Aluno(Long id, String nome, String email, String telefone, Long cpf, LocalDate dataNascimento) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
 		this.cpf = cpf;
+		this.dataNascimento = dataNascimento;
 	}
 	
 	public Aluno() {
@@ -68,6 +70,14 @@ public class Aluno {
 
 	public void setCpf(Long cpf) {
 		this.cpf = cpf;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 }
